@@ -1,6 +1,8 @@
 import Image from 'next/image';
-
-export default async function MoviePage({ params }) {
+type params = {
+  params: any;
+};
+export default async function MoviePage({ params} : params) {
   const movieId = params.id;
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`
@@ -14,6 +16,7 @@ export default async function MoviePage({ params }) {
           src={`https://image.tmdb.org/t/p/original/${
             movie.backdrop_path || movie.poster_path
           }`}
+          alt=''
           width={500}
           height={300}
           className='rounded-lg'

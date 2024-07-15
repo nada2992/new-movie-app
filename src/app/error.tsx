@@ -1,7 +1,11 @@
 "use client";
 import { useEffect } from "react";
+type children = {
+  error: string;
+  reset: any;
+};
 
-const error = ({error, reset}) => {
+const error = ({error, reset}: children) => {
     useEffect(() => {
         console.log(error);
     }, [error])

@@ -1,6 +1,8 @@
 import Results from '@/components/Results';
-
-export default async function SearchPage({ params }) {
+type params = {
+  params: any;
+};
+export default async function SearchPage({ params }: params) {
   const seachTerm = params.searchTerm;
   const res = await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${seachTerm}&language=en-US&page=1&include_adult=false`

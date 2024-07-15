@@ -2,8 +2,11 @@
 
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-
-const NavbarItem = ({title, param}) => {
+type children = {
+  title: any;
+  param: any;
+};
+const NavbarItem = ({title, param}: children) => {
     const searchParams = useSearchParams();
     const genre = searchParams.get('genre');
   return (
